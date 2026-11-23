@@ -2,6 +2,21 @@
 
 Extensión del cliente `dashboard/` (Actividades 1 y 2) y del backend GraphQL (`ingresos/`) para visualizar y gestionar la matriz de roles y permisos y asignar puestos en la tabla de Usuarios.
 
+**Repositorio de entrega:** https://github.com/Colcolat/unidad3-actividad3-matriz-roles-permisos
+
+## Integrantes del equipo
+
+| Nombre | Matrícula |
+| --- | --- |
+| Angel Abraham Lugo Saenz | SW2409052 |
+| Juan Jose Zapata Buenfil | SW2509044 |
+| Josue Enmanuel Poot Mateo | SW2509033 |
+| Sergio Origion Huerta Martinez | SW2509012 |
+| Diego Ramirez Magaña | SW2509051 |
+
+**Docente:** Gimer Amilcar Cervera Evia.  
+**Asignatura:** Fundamentos de arquitectura de software y desarrollo backend.
+
 ## Cómo ejecutar el proyecto
 
 1. Desde la carpeta `ingresos/`, activar el entorno virtual e instalar dependencias:

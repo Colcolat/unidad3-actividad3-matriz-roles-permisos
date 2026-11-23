@@ -14,4 +14,4 @@ Docente: Gimer Amilcar Cervera Evia.
 
 Asignatura: Fundamentos de arquitectura de software y desarrollo backend.
 
-Actividad: Unidad III · Actividad 1 · Diseño e implementación del dashboard financiero.
+Actividad: Unidad III · Actividad 3 · Matriz de roles y permisos del sistema.
