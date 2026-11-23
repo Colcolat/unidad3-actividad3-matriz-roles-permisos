@@ -1,0 +1,22 @@
+{
+  "mysql_version": "8.4.13",
+  "checks_passed": 16,
+  "checks": [
+    "API, dashboard y GraphiQL disponibles en el mismo origen",
+    "Login real con usuario registrado en MySQL",
+    "GraphQL coincide con los cinco importes de referencia y una cuenta en rojo",
+    "Consulta SQL independiente en MySQL 8.4.13 confirma saldos y movimientos",
+    "HTTP rechaza ausencia de token y token inválido sin devolver balances",
+    "HTTP rechaza fechas invertidas",
+    "Navegador: login, indicadores y tabla coinciden con la respuesta real",
+    "Diseño móvil de 390 px sin desbordamiento de la página",
+    "Cambio de fechas actualiza importes y etiqueta del mismo período",
+    "Fechas invertidas: mensaje claro, sin petición al API ni importes anteriores",
+    "Cerrar sesión elimina el token del almacenamiento del cliente",
+    "Usuario sin permiso ve acceso denegado y ningún total inventado",
+    "Empresa sin cuentas: estado vacío real y aislamiento entre empresas",
+    "Período sin movimientos conserva el saldo anterior",
+    "Token inválido: regreso al login, mensaje visible y token eliminado",
+    "Sin errores de JavaScript durante el recorrido"
+  ]
+}

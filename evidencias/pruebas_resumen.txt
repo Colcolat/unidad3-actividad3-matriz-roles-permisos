@@ -1,0 +1,18 @@
+Unidad III · Actividad 1 · Resultados de verificación
+
+Backend: python -m unittest discover -s tests -v
+Ran 15 tests
+OK (skipped=1)
+14 aprobadas; 1 prueba heredada de rollback MySQL omitida por su condición RUN_MYSQL_TESTS.
+Las 9 pruebas nuevas de balances pasaron. Las unitarias usan SQLite temporal.
+
+Cliente: node --test dashboard/format.test.mjs
+3 pruebas aprobadas; 0 fallos.
+
+Integración: python verificacion/verificar_integracion.py
+16 comprobaciones aprobadas sobre MySQL 8.4.13, API HTTP real y Google Chrome.
+Incluye una consulta SQL independiente, login, indicadores, detalle, fechas, permisos,
+aislamiento entre empresas, estados vacíos, cierre de sesión, token inválido y vista móvil.
+
+Los resultados de integración completos se guardan en verificacion_integracion.json.
+No se guardan tokens, contraseñas ni secretos de la instalación.

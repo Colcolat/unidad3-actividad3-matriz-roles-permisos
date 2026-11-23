@@ -1,0 +1,87 @@
+{
+  "login_admin": {
+    "ok": true,
+    "user": {
+      "name": "Administrador de demostración",
+      "email": "admin@dashboard.example.com"
+    }
+  },
+  "me": {
+    "companyId": "1",
+    "companyName": "Empresa de demostración",
+    "role": {
+      "code": "ADMINISTRADOR"
+    },
+    "permissions": [
+      "accounts.read",
+      "accounts.write",
+      "company.users.read",
+      "company.users.write",
+      "concepts.read",
+      "concepts.write",
+      "roles.read",
+      "roles.write",
+      "transactions.read",
+      "transactions.write"
+    ]
+  },
+  "companyUsers_count": 3,
+  "admins": 1,
+  "create_user": {
+    "id": "5",
+    "isActive": true,
+    "user": {
+      "email": "evidencia.act2.0556c6a9@dashboard.example.com"
+    },
+    "role": {
+      "code": "CONSULTA"
+    }
+  },
+  "duplicate_email_error": "El correo electrónico ya está registrado.",
+  "deactivate_user": {
+    "id": "5",
+    "isActive": false
+  },
+  "create_account": {
+    "id": "4",
+    "name": "Monedero evidencia 42f988",
+    "accountType": "WALLET",
+    "isActive": true
+  },
+  "create_concept": {
+    "id": "3",
+    "name": "Egreso evidencia 93c291",
+    "conceptType": "EXPENSE"
+  },
+  "assign": {
+    "id": "7",
+    "isActive": true
+  },
+  "duplicate_assign_error": "El concepto ya está asignado a la cuenta.",
+  "remove_assign": true,
+  "concept_still_active": {
+    "id": "3",
+    "name": "Egreso evidencia 93c291",
+    "isActive": true
+  },
+  "readonly_permissions": {
+    "role": {
+      "code": "CONSULTA"
+    },
+    "permissions": [
+      "accounts.read",
+      "company.users.read",
+      "concepts.read",
+      "transactions.read"
+    ]
+  },
+  "readonly_write_denied": "Acceso denegado: falta el permiso accounts.write.",
+  "idempotency": {
+    "first_id": "10",
+    "second_id": "10",
+    "same_id": true,
+    "conflict_error": "La llave de idempotencia ya fue utilizada con otros datos.",
+    "new_key_id": "11",
+    "new_key_different": true
+  }
+}

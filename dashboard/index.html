@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sistema General de Ingresos</title>
+  <link rel="stylesheet" href="styles.css"><script type="module" src="app.js"></script>
+</head>
+<body>
+  <section id="login-view" class="login-layout">
+    <aside class="intro">
+      <a class="brand" href="./" aria-label="Sistema General de Ingresos"><span class="brand-mark" aria-hidden="true">↗</span><span>SGI <small>Sistema General de Ingresos</small></span></a>
+      <div class="intro-copy"><p class="eyebrow">DASHBOARD FINANCIERO Y ADMINISTRATIVO</p><h1>Tu empresa,<br>en perspectiva.</h1><p>Consulta el balance, administra usuarios, cuentas y conceptos desde la misma sesión.</p></div>
+      <div class="intro-graphic" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+      <p class="intro-foot">Una vista clara para entender y operar tu empresa.</p>
+    </aside>
+    <main class="login-main"><div class="login-card">
+      <p class="eyebrow">BIENVENIDO</p><h2>Inicia sesión</h2><p class="muted">Entra con el correo registrado en tu empresa.</p>
+      <p id="login-message" class="notice" role="alert" hidden></p>
+      <form id="login-form">
+        <label for="email">Correo electrónico</label><input id="email" name="email" type="email" autocomplete="username" required placeholder="nombre@empresa.com">
+        <label for="password">Contraseña</label><input id="password" name="password" type="password" autocomplete="current-password" required>
+        <details id="membership-options"><summary>¿Tienes más de una membresía?</summary><label for="membership">ID de tu membresía</label><input id="membership" inputmode="numeric" pattern="[1-9][0-9]*" placeholder="Solo si perteneces a varias empresas"><p class="muted small">Usa el identificador de una membresía propia y activa.</p></details>
+        <button id="login-button" class="primary" type="submit">Entrar al dashboard <span aria-hidden="true">→</span></button>
+      </form><p class="login-note">La información disponible depende de los permisos de tu cuenta.</p>
+    </div></main>
+  </section>
+
+  <div id="app-view" hidden>
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">↗</span><span>SGI <small>Sistema General de Ingresos</small></span></div>
+      <div class="session"><span id="company-label" class="company-chip"></span><span id="user-name"></span><button id="logout" class="ghost">Cerrar sesión <span aria-hidden="true">↗</span></button></div>
+    </header>
+    <div class="app-shell">
+      <nav class="sidebar" aria-label="Navegación principal">
+        <p class="nav-label">Vistas</p>
+        <button type="button" class="nav-item active" data-view="financial" id="nav-financial">Dashboard financiero</button>
+        <button type="button" class="nav-item" data-view="admin" id="nav-admin">Dashboard administrativo</button>
+        <div id="admin-subnav" class="subnav" hidden>
+          <button type="button" class="subnav-item active" data-admin="users" id="nav-users">Usuarios</button>
+          <button type="button" class="subnav-item" data-admin="accounts" id="nav-accounts">Cuentas</button>
+          <button type="button" class="subnav-item" data-admin="concepts" id="nav-concepts">Conceptos</button>
+          <button type="button" class="subnav-item" data-admin="roles" id="nav-roles" hidden>Roles y permisos</button>
+        </div>
+      </nav>
+
+      <main class="dashboard">
+        <section id="financial-view">
+          <div class="page-heading"><div><p class="eyebrow">VISTA GENERAL</p><h1>Dashboard financiero</h1><p id="company" class="muted">Consulta el balance de tu empresa.</p></div><span class="currency-tag">MXN · Peso mexicano</span></div>
+          <form id="period-form" class="period-controls" aria-label="Controles de período">
+            <div><label for="from-date">Desde</label><input id="from-date" type="date" required max="9999-12-30"></div>
+            <span class="date-separator" aria-hidden="true">—</span>
+            <div><label for="to-date">Hasta</label><input id="to-date" type="date" required max="9999-12-30"></div>
+            <button id="refresh" class="primary" type="submit">Actualizar <span aria-hidden="true">↻</span></button>
+            <button id="demo-period" class="text-button" type="button">26–30 oct 2026</button>
+          </form>
+          <div id="status" class="notice" role="status" aria-live="polite" hidden></div>
+          <section id="results" aria-label="Balance consultado" hidden>
+            <div class="section-heading"><h2>Resumen del período</h2><p id="applied-period" class="muted"></p></div>
+            <div class="metrics">
+              <article class="metric"><p>Saldo inicial</p><strong id="openingBalance"></strong><small>MXN · Al inicio del período</small></article>
+              <article class="metric"><p>Ingresos <span class="income-icon" aria-hidden="true">↙</span></p><strong id="totalIncome"></strong><small>MXN · Entradas del período</small></article>
+              <article class="metric"><p>Egresos <span aria-hidden="true">↗</span></p><strong id="totalExpense"></strong><small>MXN · Salidas del período</small></article>
+              <article class="metric"><p>Profit</p><strong id="profit"></strong><small>MXN · Ingresos menos egresos</small></article>
+              <article class="metric closing"><p>Saldo final</p><strong id="closingBalance"></strong><small>MXN · Disponible al cierre</small></article>
+            </div>
+            <div class="risk" aria-label="Estado de riesgo"><div><span class="risk-dot" id="risk-dot" aria-hidden="true"></span><strong id="general-risk"></strong></div><span id="accounts-risk"></span><span class="muted small">El saldo general y cada cuenta se revisan por separado.</span></div>
+            <p id="no-movements" class="notice neutral" hidden>No hay movimientos en este período. El saldo puede provenir de fechas anteriores.</p>
+            <section class="accounts-panel" aria-labelledby="accounts-title"><div class="section-heading"><div><h2 id="accounts-title">Detalle por cuenta</h2><p class="muted small">Saldos e importes del mismo período, expresados en MXN.</p></div><span id="account-count" class="count-tag"></span></div>
+              <p id="empty-accounts" class="empty-state" hidden>Esta empresa todavía no tiene cuentas registradas.</p>
+              <div id="table-wrapper" class="table-scroll" tabindex="0" aria-label="Tabla de cuentas, desplazable horizontalmente"><table><caption class="sr-only">Desglose de balances por cuenta en pesos mexicanos</caption><thead><tr><th scope="col">Cuenta</th><th scope="col">Estado</th><th scope="col">Saldo inicial</th><th scope="col">Ingresos</th><th scope="col">Egresos</th><th scope="col">Profit</th><th scope="col">Saldo final</th><th scope="col">Riesgo</th></tr></thead><tbody id="account-rows"></tbody></table></div>
+            </section>
+          </section>
+        </section>
+
+        <section id="admin-view" hidden>
+          <div class="page-heading"><div><p class="eyebrow">ADMINISTRACIÓN</p><h1 id="admin-title">Usuarios</h1><p class="muted" id="admin-subtitle">Membresías de la empresa autenticada.</p></div></div>
+          <div id="admin-status" class="notice" role="status" aria-live="polite" hidden></div>
+
+          <section id="users-panel" class="admin-panel">
+            <div class="stat-grid" aria-label="Resumen de usuarios">
+              <article class="stat-card"><p>Usuarios activos</p><strong id="users-active-count">0</strong></article>
+              <article class="stat-card"><p>Administrador principal</p><strong id="users-admin-count">0</strong><small id="users-admin-note" class="muted small" hidden></small></article>
+              <article class="stat-card"><p>Inactivos</p><strong id="users-inactive-count">0</strong></article>
+            </div>
+            <div class="toolbar">
+              <div class="filters">
+                <label class="sr-only" for="users-search">Buscar usuarios</label>
+                <input id="users-search" type="search" placeholder="Buscar por nombre o correo">
+                <label class="sr-only" for="users-filter">Filtrar estado</label>
+                <select id="users-filter">
+                  <option value="all">Todos</option>
+                  <option value="active">Activos</option>
+                  <option value="inactive">Inactivos</option>
+                </select>
+              </div>
+              <button id="users-new" class="primary" type="button" hidden>Nuevo usuario</button>
+            </div>
+            <form id="users-form" class="admin-form" hidden>
+              <div class="form-grid">
+                <div><label for="user-name-input">Nombre</label><input id="user-name-input" required maxlength="120"></div>
+                <div><label for="user-email-input">Correo</label><input id="user-email-input" type="email" required></div>
+                <div><label for="user-password-input">Contraseña</label><input id="user-password-input" type="password" required minlength="8" autocomplete="new-password"></div>
+              </div>
+              <div class="form-actions">
+                <button class="primary" type="submit" id="users-save">Guardar usuario</button>
+                <button class="ghost dark" type="button" id="users-cancel">Cancelar</button>
+              </div>
+            </form>
+            <div class="accounts-panel">
+              <p id="users-empty" class="empty-state" hidden>No hay usuarios para mostrar con los filtros actuales.</p>
+              <div class="table-scroll" tabindex="0"><table>
+                <thead><tr><th>Nombre</th><th>Correo</th><th>Rol</th><th>Administrador</th><th>Estado</th><th>Acciones</th></tr></thead>
+                <tbody id="users-rows"></tbody>
+              </table></div>
+            </div>
+          </section>
+
+          <section id="accounts-panel" class="admin-panel" hidden>
+            <div class="toolbar">
+              <div class="filters">
+                <label class="sr-only" for="accounts-type-filter">Filtrar tipo</label>
+                <select id="accounts-type-filter">
+                  <option value="all">Todas</option>
+                  <option value="CASH">Efectivo</option>
+                  <option value="DEBIT">Débito</option>
+                  <option value="CREDIT">Crédito</option>
+                  <option value="SAVINGS">Ahorro</option>
+                  <option value="INVESTMENT">Inversión</option>
+                  <option value="WALLET">Monedero</option>
+                  <option value="OTHER">Otro</option>
+                </select>
+                <label class="check-inline"><input id="accounts-active-only" type="checkbox" checked> Solo activas</label>
+              </div>
+              <button id="accounts-new" class="primary" type="button" hidden>Nueva cuenta</button>
+            </div>
+            <form id="accounts-form" class="admin-form" hidden>
+              <div class="form-grid">
+                <div><label for="account-name-input">Nombre</label><input id="account-name-input" required maxlength="120"></div>
+                <div><label for="account-type-input">Tipo de cuenta</label>
+                  <select id="account-type-input" required>
+                    <option value="CASH">Efectivo</option>
+                    <option value="DEBIT">Débito</option>
+                    <option value="CREDIT">Crédito</option>
+                    <option value="SAVINGS">Ahorro</option>
+                    <option value="INVESTMENT">Inversión</option>
+                    <option value="WALLET">Monedero</option>
+                    <option value="OTHER">Otro</option>
+                  </select>
+                </div>
+                <div><label for="account-bank-input">Banco</label><input id="account-bank-input" maxlength="120" placeholder="Opcional"></div>
+                <div><label for="account-clabe-input">CLABE</label><input id="account-clabe-input" maxlength="30" placeholder="Opcional"></div>
+                <div class="full"><label for="account-desc-input">Descripción corta</label><input id="account-desc-input" maxlength="255"></div>
+              </div>
+              <div class="form-actions">
+                <button class="primary" type="submit" id="accounts-save">Guardar cuenta</button>
+                <button class="ghost dark" type="button" id="accounts-cancel">Cancelar</button>
+              </div>
+            </form>
+            <div class="accounts-panel">
+              <p id="accounts-empty" class="empty-state" hidden>No hay cuentas registradas para esta empresa.</p>
+              <div class="table-scroll" tabindex="0"><table>
+                <thead><tr><th>Nombre</th><th>Tipo</th><th>Banco</th><th>Referencia</th><th>Estado</th></tr></thead>
+                <tbody id="accounts-rows"></tbody>
+              </table></div>
+            </div>
+          </section>
+
+          <section id="concepts-panel" class="admin-panel" hidden>
+            <div class="split-panels">
+              <div class="split-card">
+                <div class="section-heading"><div><h2>Catálogo de conceptos</h2><p class="muted small">Conceptos de ingreso y egreso de la empresa.</p></div></div>
+                <div class="toolbar compact">
+                  <div class="filters">
+                    <select id="concepts-type-filter">
+                      <option value="all">Todos</option>
+                      <option value="INCOME">Ingreso</option>
+                      <option value="EXPENSE">Egreso</option>
+                    </select>
+                    <label class="check-inline"><input id="concepts-active-only" type="checkbox" checked> Solo activos</label>
+                  </div>
+                  <button id="concepts-new" class="primary" type="button" hidden>Nuevo concepto</button>
+                </div>
+                <form id="concepts-form" class="admin-form" hidden>
+                  <div class="form-grid">
+                    <div><label for="concept-name-input">Nombre</label><input id="concept-name-input" required maxlength="120"></div>
+                    <div><label for="concept-type-input">Tipo</label>
+                      <select id="concept-type-input" required>
+                        <option value="INCOME">Ingreso</option>
+                        <option value="EXPENSE">Egreso</option>
+                      </select>
+                    </div>
+                    <div class="full"><label for="concept-desc-input">Descripción corta</label><input id="concept-desc-input" maxlength="255"></div>
+                  </div>
+                  <div class="form-actions">
+                    <button class="primary" type="submit" id="concepts-save">Guardar concepto</button>
+                    <button class="ghost dark" type="button" id="concepts-cancel">Cancelar</button>
+                  </div>
+                </form>
+                <p id="concepts-empty" class="empty-state" hidden>No hay conceptos en el catálogo.</p>
+                <div class="table-scroll" tabindex="0"><table>
+                  <thead><tr><th>Concepto</th><th>Tipo</th><th>Estado</th></tr></thead>
+                  <tbody id="concepts-rows"></tbody>
+                </table></div>
+              </div>
+
+              <div class="split-card">
+                <div class="section-heading"><div><h2>Conceptos permitidos por cuenta</h2><p class="muted small">Asignación activa entre cuenta y concepto.</p></div></div>
+                <div class="toolbar compact">
+                  <label class="grow"><span class="sr-only">Cuenta</span>
+                    <select id="assignment-account"></select>
+                  </label>
+                  <button id="assignment-new" class="primary" type="button" hidden>Asignar concepto</button>
+                </div>
+                <form id="assignment-form" class="admin-form" hidden>
+                  <div class="form-grid">
+                    <div class="full"><label for="assignment-concept">Concepto</label><select id="assignment-concept" required></select></div>
+                  </div>
+                  <div class="form-actions">
+                    <button class="primary" type="submit" id="assignment-save">Guardar asignación</button>
+                    <button class="ghost dark" type="button" id="assignment-cancel">Cancelar</button>
+                  </div>
+                </form>
+                <p id="assignment-empty" class="empty-state" hidden>Selecciona una cuenta para ver sus conceptos permitidos.</p>
+                <div class="table-scroll" tabindex="0"><table>
+                  <thead><tr><th>Concepto</th><th>Tipo</th><th>Estado</th><th>Acciones</th></tr></thead>
+                  <tbody id="assignment-rows"></tbody>
+                </table></div>
+              </div>
+            </div>
+          </section>
+          <section id="roles-panel" class="admin-panel" hidden>
+            <p id="roles-readonly-note" class="notice neutral" hidden>Modo solo lectura: tu rol permite consultar la matriz, pero no modificar permisos.</p>
+            <div class="accounts-panel matrix-card">
+              <p id="roles-empty" class="empty-state" hidden>El catálogo de roles y permisos no está cargado.</p>
+              <div id="matrix-wrapper" class="table-scroll" tabindex="0" aria-label="Matriz de roles y permisos">
+                <table class="matrix-table">
+                  <thead id="matrix-head"></thead>
+                  <tbody id="matrix-body"></tbody>
+                  <tfoot id="matrix-foot"></tfoot>
+                </table>
+              </div>
+            </div>
+            <section id="matrix-preview" class="preview-card" aria-labelledby="preview-title" hidden>
+              <div class="section-heading">
+                <div>
+                  <h2 id="preview-title">Vista previa</h2>
+                  <p id="preview-subtitle" class="muted small">previewRolePermissions solo lee. setRolePermissions guarda la lista completa del puesto.</p>
+                </div>
+                <span id="preview-count" class="count-tag"></span>
+              </div>
+              <dl class="preview-summary">
+                <div class="preview-row activate"><dt>Se van a activar</dt><dd id="preview-activate">ninguno</dd></div>
+                <div class="preview-row deactivate"><dt>Se van a desactivar</dt><dd id="preview-deactivate">ninguno</dd></div>
+                <div class="preview-row"><dt>Sin cambio</dt><dd id="preview-unchanged">0</dd></div>
+                <div class="preview-row"><dt>Total final</dt><dd id="preview-final">0</dd></div>
+              </dl>
+              <div class="form-actions">
+                <button id="preview-save" class="primary" type="button">Guardar columna</button>
+                <button id="preview-discard" class="ghost dark" type="button">Descartar</button>
+              </div>
+            </section>
+          </section>
+        </section>
+
+        <footer class="footer"><span>Sistema General de Ingresos</span><span>Importes en MXN · Administración con RBAC</span></footer>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,1507 @@
+Inicia sesión para consultar la información.
+
+GraphQL request:1:12
+1 | mutation { createAccount(input: {companyId: "1", accountType: CASH, name: "sin-token"}) { id } }
+  |            ^
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/graphql/execution/executor.py", line 982, in execute_field
+    result = resolve_fn(source, info, **args)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1292, in _resolver
+    return _get_result_with_extensions(
+        _source,
+        strawberry_info,
+        **kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1278, in extension_resolver
+    return reduce(
+           ~~~~~~~
+    ...<2 lines>...
+        wrapped_get_result,
+        ~~~~~~~~~~~~~~~~~~~
+    )(_source, info, **field_kwargs)
+    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1270, in wrapped_get_result
+    return _get_result(
+        _source,
+    ...<2 lines>...
+        field_kwargs=kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1156, in _get_result
+    return field.get_result(
+           ~~~~~~~~~~~~~~~~^
+        _source, info=info, args=field_args, kwargs=field_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/field.py", line 242, in get_result
+    return self.base_resolver(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/fields/resolver.py", line 280, in __call__
+    return self.wrapped_func(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 1655, in create_account
+    exigir_permiso(db, leer_actor(db, info), "accounts.write", int(input.company_id))
+                       ~~~~~~~~~~^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 75, in leer_actor
+    raise GraphQLError("Inicia sesión para consultar la información.", extensions={"code": "UNAUTHENTICATED"})
+graphql.error.graphql_error.GraphQLError: Inicia sesión para consultar la información.
+Acceso denegado: falta el permiso accounts.write.
+
+GraphQL request:1:12
+1 | mutation { createAccount(input: {companyId: "1", accountType: CASH, name: "maria-rechazado"}) { id } }
+  |            ^
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/graphql/execution/executor.py", line 982, in execute_field
+    result = resolve_fn(source, info, **args)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1292, in _resolver
+    return _get_result_with_extensions(
+        _source,
+        strawberry_info,
+        **kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1278, in extension_resolver
+    return reduce(
+           ~~~~~~~
+    ...<2 lines>...
+        wrapped_get_result,
+        ~~~~~~~~~~~~~~~~~~~
+    )(_source, info, **field_kwargs)
+    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1270, in wrapped_get_result
+    return _get_result(
+        _source,
+    ...<2 lines>...
+        field_kwargs=kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1156, in _get_result
+    return field.get_result(
+           ~~~~~~~~~~~~~~~~^
+        _source, info=info, args=field_args, kwargs=field_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/field.py", line 242, in get_result
+    return self.base_resolver(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/fields/resolver.py", line 280, in __call__
+    return self.wrapped_func(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 1655, in create_account
+    exigir_permiso(db, leer_actor(db, info), "accounts.write", int(input.company_id))
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/rbac.py", line 111, in exigir_permiso
+    raise GraphQLError(f"Acceso denegado: falta el permiso {codigo}.", extensions={"code": "FORBIDDEN"})
+graphql.error.graphql_error.GraphQLError: Acceso denegado: falta el permiso accounts.write.
+Acceso denegado: falta el permiso transactions.write.
+
+GraphQL request:1:12
+1 | mutation { createTransaction(input: {accountId: "1", conceptId: "1", transaction
+  |            ^
+  | Type: INCOME, amount: "10.00", idempotencyKey: "6b915684-7a10-4c37-8b97-6bfc04c2
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/graphql/execution/executor.py", line 982, in execute_field
+    result = resolve_fn(source, info, **args)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1292, in _resolver
+    return _get_result_with_extensions(
+        _source,
+        strawberry_info,
+        **kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1278, in extension_resolver
+    return reduce(
+           ~~~~~~~
+    ...<2 lines>...
+        wrapped_get_result,
+        ~~~~~~~~~~~~~~~~~~~
+    )(_source, info, **field_kwargs)
+    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1270, in wrapped_get_result
+    return _get_result(
+        _source,
+    ...<2 lines>...
+        field_kwargs=kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1156, in _get_result
+    return field.get_result(
+           ~~~~~~~~~~~~~~~~^
+        _source, info=info, args=field_args, kwargs=field_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/field.py", line 242, in get_result
+    return self.base_resolver(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/fields/resolver.py", line 280, in __call__
+    return self.wrapped_func(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 1840, in create_transaction
+    exigir_permiso(db, company_user.id, "transactions.write", account.company_id)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/rbac.py", line 111, in exigir_permiso
+    raise GraphQLError(f"Acceso denegado: falta el permiso {codigo}.", extensions={"code": "FORBIDDEN"})
+graphql.error.graphql_error.GraphQLError: Acceso denegado: falta el permiso transactions.write.
+Unknown argument 'companyId' on field 'Query.accounts'.
+
+GraphQL request:1:18
+1 | query { accounts(companyId: "1") { id } }
+  |                  ^
+Los datos no pertenecen a la empresa de esta membresía.
+
+GraphQL request:1:12
+1 | mutation { createAccount(input: {companyId: "1", accountType: CASH, name: "otra-empresa"}) { id } }
+  |            ^
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/graphql/execution/executor.py", line 982, in execute_field
+    result = resolve_fn(source, info, **args)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1292, in _resolver
+    return _get_result_with_extensions(
+        _source,
+        strawberry_info,
+        **kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1278, in extension_resolver
+    return reduce(
+           ~~~~~~~
+    ...<2 lines>...
+        wrapped_get_result,
+        ~~~~~~~~~~~~~~~~~~~
+    )(_source, info, **field_kwargs)
+    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1270, in wrapped_get_result
+    return _get_result(
+        _source,
+    ...<2 lines>...
+        field_kwargs=kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1156, in _get_result
+    return field.get_result(
+           ~~~~~~~~~~~~~~~~^
+        _source, info=info, args=field_args, kwargs=field_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/field.py", line 242, in get_result
+    return self.base_resolver(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/fields/resolver.py", line 280, in __call__
+    return self.wrapped_func(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 1655, in create_account
+    exigir_permiso(db, leer_actor(db, info), "accounts.write", int(input.company_id))
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/rbac.py", line 100, in exigir_permiso
+    raise GraphQLError("Los datos no pertenecen a la empresa de esta membresía.")
+graphql.error.graphql_error.GraphQLError: Los datos no pertenecen a la empresa de esta membresía.
+Tu sesión venció o no es válida. Inicia sesión nuevamente.
+
+GraphQL request:1:12
+1 | mutation { createAccount(input: {companyId: "1", accountType: CASH, name: "token-invalido"}) { id } }
+  |            ^
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 77, in leer_actor
+    member_id, company_id = decode_access_token(authorization[7:].strip())
+                            ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/security.py", line 43, in decode_access_token
+    payload = jwt.decode(
+        token,
+    ...<2 lines>...
+        options={"require": ["companyUserId", "companyId", "exp"]},
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/jwt/api_jwt.py", line 370, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/jwt/api_jwt.py", line 267, in decode_complete
+    decoded = self._jws.decode_complete(
+        jwt,
+    ...<3 lines>...
+        detached_payload=detached_payload,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/jwt/api_jws.py", line 252, in decode_complete
+    payload, signing_input, header, signature = self._load(jwt)
+                                                ~~~~~~~~~~^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/jwt/api_jws.py", line 393, in _load
+    signature = self._decode_base64url_segment(crypto_segment, "crypto")
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/jwt/api_jws.py", line 352, in _decode_base64url_segment
+    raise DecodeError(f"Invalid {name} padding")
+jwt.exceptions.DecodeError: Invalid crypto padding
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/graphql/execution/executor.py", line 982, in execute_field
+    result = resolve_fn(source, info, **args)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1292, in _resolver
+    return _get_result_with_extensions(
+        _source,
+        strawberry_info,
+        **kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1278, in extension_resolver
+    return reduce(
+           ~~~~~~~
+    ...<2 lines>...
+        wrapped_get_result,
+        ~~~~~~~~~~~~~~~~~~~
+    )(_source, info, **field_kwargs)
+    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1270, in wrapped_get_result
+    return _get_result(
+        _source,
+    ...<2 lines>...
+        field_kwargs=kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1156, in _get_result
+    return field.get_result(
+           ~~~~~~~~~~~~~~~~^
+        _source, info=info, args=field_args, kwargs=field_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/field.py", line 242, in get_result
+    return self.base_resolver(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/fields/resolver.py", line 280, in __call__
+    return self.wrapped_func(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 1655, in create_account
+    exigir_permiso(db, leer_actor(db, info), "accounts.write", int(input.company_id))
+                       ~~~~~~~~~~^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 79, in leer_actor
+    raise GraphQLError("Tu sesión venció o no es válida. Inicia sesión nuevamente.", extensions={"code": "UNAUTHENTICATED"}) from exc
+graphql.error.graphql_error.GraphQLError: Tu sesión venció o no es válida. Inicia sesión nuevamente.
+Tu sesión venció o no es válida. Inicia sesión nuevamente.
+
+GraphQL request:1:12
+1 | mutation { createAccount(input: {companyId: "1", accountType: CASH, name: "token-invalido"}) { id } }
+  |            ^
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 77, in leer_actor
+    member_id, company_id = decode_access_token(authorization[7:].strip())
+                            ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/security.py", line 43, in decode_access_token
+    payload = jwt.decode(
+        token,
+    ...<2 lines>...
+        options={"require": ["companyUserId", "companyId", "exp"]},
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/jwt/api_jwt.py", line 370, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/jwt/api_jwt.py", line 277, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/jwt/api_jwt.py", line 410, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/jwt/api_jwt.py", line 513, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/graphql/execution/executor.py", line 982, in execute_field
+    result = resolve_fn(source, info, **args)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1292, in _resolver
+    return _get_result_with_extensions(
+        _source,
+        strawberry_info,
+        **kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1278, in extension_resolver
+    return reduce(
+           ~~~~~~~
+    ...<2 lines>...
+        wrapped_get_result,
+        ~~~~~~~~~~~~~~~~~~~
+    )(_source, info, **field_kwargs)
+    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1270, in wrapped_get_result
+    return _get_result(
+        _source,
+    ...<2 lines>...
+        field_kwargs=kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1156, in _get_result
+    return field.get_result(
+           ~~~~~~~~~~~~~~~~^
+        _source, info=info, args=field_args, kwargs=field_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/field.py", line 242, in get_result
+    return self.base_resolver(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/fields/resolver.py", line 280, in __call__
+    return self.wrapped_func(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 1655, in create_account
+    exigir_permiso(db, leer_actor(db, info), "accounts.write", int(input.company_id))
+                       ~~~~~~~~~~^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 79, in leer_actor
+    raise GraphQLError("Tu sesión venció o no es válida. Inicia sesión nuevamente.", extensions={"code": "UNAUTHENTICATED"}) from exc
+graphql.error.graphql_error.GraphQLError: Tu sesión venció o no es válida. Inicia sesión nuevamente.
+Unknown argument 'actorCompanyUserId' on field 'Mutation.createAccount'.
+
+GraphQL request:1:26
+1 | mutation { createAccount(actorCompanyUserId: "1", input: {companyId: "1", accountType: CASH, name: "id-ajeno"}) { id } }
+  |                          ^
+.Correo electrónico o contraseña incorrectos.
+
+GraphQL request:1:12
+1 | mutation { login(input: {email: "maria@example.com", password: "incorrecta"}) { token } }
+  |            ^
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/graphql/execution/executor.py", line 982, in execute_field
+    result = resolve_fn(source, info, **args)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1292, in _resolver
+    return _get_result_with_extensions(
+        _source,
+        strawberry_info,
+        **kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1278, in extension_resolver
+    return reduce(
+           ~~~~~~~
+    ...<2 lines>...
+        wrapped_get_result,
+        ~~~~~~~~~~~~~~~~~~~
+    )(_source, info, **field_kwargs)
+    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1270, in wrapped_get_result
+    return _get_result(
+        _source,
+    ...<2 lines>...
+        field_kwargs=kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1156, in _get_result
+    return field.get_result(
+           ~~~~~~~~~~~~~~~~^
+        _source, info=info, args=field_args, kwargs=field_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/field.py", line 242, in get_result
+    return self.base_resolver(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/fields/resolver.py", line 280, in __call__
+    return self.wrapped_func(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 1961, in login
+    raise GraphQLError(
+    ...<2 lines>...
+    )
+graphql.error.graphql_error.GraphQLError: Correo electrónico o contraseña incorrectos.
+.Indica tu membresía activa para entrar.
+
+GraphQL request:1:12
+1 | mutation { login(input: {email: "maria@example.com", password: "secreto-pruebas"}) { token } }
+  |            ^
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/graphql/execution/executor.py", line 982, in execute_field
+    result = resolve_fn(source, info, **args)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1292, in _resolver
+    return _get_result_with_extensions(
+        _source,
+        strawberry_info,
+        **kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1278, in extension_resolver
+    return reduce(
+           ~~~~~~~
+    ...<2 lines>...
+        wrapped_get_result,
+        ~~~~~~~~~~~~~~~~~~~
+    )(_source, info, **field_kwargs)
+    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1270, in wrapped_get_result
+    return _get_result(
+        _source,
+    ...<2 lines>...
+        field_kwargs=kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1156, in _get_result
+    return field.get_result(
+           ~~~~~~~~~~~~~~~~^
+        _source, info=info, args=field_args, kwargs=field_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/field.py", line 242, in get_result
+    return self.base_resolver(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/fields/resolver.py", line 280, in __call__
+    return self.wrapped_func(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 1979, in login
+    raise GraphQLError("Indica tu membresía activa para entrar.")
+graphql.error.graphql_error.GraphQLError: Indica tu membresía activa para entrar.
+La membresía no pertenece al usuario o no está activa.
+
+GraphQL request:1:12
+1 | mutation { login(input: {email: "maria@example.com", password: "secreto-pruebas", companyUserId: "1"}) { token } }
+  |            ^
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/graphql/execution/executor.py", line 982, in execute_field
+    result = resolve_fn(source, info, **args)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1292, in _resolver
+    return _get_result_with_extensions(
+        _source,
+        strawberry_info,
+        **kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1278, in extension_resolver
+    return reduce(
+           ~~~~~~~
+    ...<2 lines>...
+        wrapped_get_result,
+        ~~~~~~~~~~~~~~~~~~~
+    )(_source, info, **field_kwargs)
+    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1270, in wrapped_get_result
+    return _get_result(
+        _source,
+    ...<2 lines>...
+        field_kwargs=kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1156, in _get_result
+    return field.get_result(
+           ~~~~~~~~~~~~~~~~^
+        _source, info=info, args=field_args, kwargs=field_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/field.py", line 242, in get_result
+    return self.base_resolver(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/fields/resolver.py", line 280, in __call__
+    return self.wrapped_func(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 1975, in login
+    raise GraphQLError("La membresía no pertenece al usuario o no está activa.")
+graphql.error.graphql_error.GraphQLError: La membresía no pertenece al usuario o no está activa.
+.El concepto ya está asignado a la cuenta.
+
+GraphQL request:2:15
+1 | mutation($input: AssignConceptToAccountInput!) {
+2 |               assignConceptToAccount(input: $input) { id }
+  |               ^
+3 |             }
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/graphql/execution/executor.py", line 982, in execute_field
+    result = resolve_fn(source, info, **args)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1292, in _resolver
+    return _get_result_with_extensions(
+        _source,
+        strawberry_info,
+        **kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1278, in extension_resolver
+    return reduce(
+           ~~~~~~~
+    ...<2 lines>...
+        wrapped_get_result,
+        ~~~~~~~~~~~~~~~~~~~
+    )(_source, info, **field_kwargs)
+    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1270, in wrapped_get_result
+    return _get_result(
+        _source,
+    ...<2 lines>...
+        field_kwargs=kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1156, in _get_result
+    return field.get_result(
+           ~~~~~~~~~~~~~~~~^
+        _source, info=info, args=field_args, kwargs=field_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/field.py", line 242, in get_result
+    return self.base_resolver(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/fields/resolver.py", line 280, in __call__
+    return self.wrapped_func(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 1763, in assign_concept_to_account
+    raise GraphQLError("El concepto ya está asignado a la cuenta.")
+graphql.error.graphql_error.GraphQLError: El concepto ya está asignado a la cuenta.
+..El correo electrónico ya está registrado.
+
+GraphQL request:2:15
+1 | mutation($input: CreateCompanyUserInput!) {
+2 |               createCompanyUser(input: $input) { id }
+  |               ^
+3 |             }
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/graphql/execution/executor.py", line 982, in execute_field
+    result = resolve_fn(source, info, **args)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1292, in _resolver
+    return _get_result_with_extensions(
+        _source,
+        strawberry_info,
+        **kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1278, in extension_resolver
+    return reduce(
+           ~~~~~~~
+    ...<2 lines>...
+        wrapped_get_result,
+        ~~~~~~~~~~~~~~~~~~~
+    )(_source, info, **field_kwargs)
+    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1270, in wrapped_get_result
+    return _get_result(
+        _source,
+    ...<2 lines>...
+        field_kwargs=kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1156, in _get_result
+    return field.get_result(
+           ~~~~~~~~~~~~~~~~^
+        _source, info=info, args=field_args, kwargs=field_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/field.py", line 242, in get_result
+    return self.base_resolver(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/fields/resolver.py", line 280, in __call__
+    return self.wrapped_func(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 1523, in create_company_user
+    raise GraphQLError(
+    ...<2 lines>...
+    )
+graphql.error.graphql_error.GraphQLError: El correo electrónico ya está registrado.
+..Acceso denegado: falta el permiso company.users.write.
+
+GraphQL request:2:15
+1 | mutation($input: CreateCompanyUserInput!) {
+2 |               createCompanyUser(input: $input) { id }
+  |               ^
+3 |             }
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/graphql/execution/executor.py", line 982, in execute_field
+    result = resolve_fn(source, info, **args)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1292, in _resolver
+    return _get_result_with_extensions(
+        _source,
+        strawberry_info,
+        **kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1278, in extension_resolver
+    return reduce(
+           ~~~~~~~
+    ...<2 lines>...
+        wrapped_get_result,
+        ~~~~~~~~~~~~~~~~~~~
+    )(_source, info, **field_kwargs)
+    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1270, in wrapped_get_result
+    return _get_result(
+        _source,
+    ...<2 lines>...
+        field_kwargs=kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1156, in _get_result
+    return field.get_result(
+           ~~~~~~~~~~~~~~~~^
+        _source, info=info, args=field_args, kwargs=field_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/field.py", line 242, in get_result
+    return self.base_resolver(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/fields/resolver.py", line 280, in __call__
+    return self.wrapped_func(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 1508, in create_company_user
+    exigir_permiso(db, leer_actor(db, info), "company.users.write", company_id)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/rbac.py", line 111, in exigir_permiso
+    raise GraphQLError(f"Acceso denegado: falta el permiso {codigo}.", extensions={"code": "FORBIDDEN"})
+graphql.error.graphql_error.GraphQLError: Acceso denegado: falta el permiso company.users.write.
+Acceso denegado: falta el permiso accounts.write.
+
+GraphQL request:2:15
+1 | mutation($input: CreateAccountInput!) {
+2 |               createAccount(input: $input) { id }
+  |               ^
+3 |             }
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/graphql/execution/executor.py", line 982, in execute_field
+    result = resolve_fn(source, info, **args)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1292, in _resolver
+    return _get_result_with_extensions(
+        _source,
+        strawberry_info,
+        **kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1278, in extension_resolver
+    return reduce(
+           ~~~~~~~
+    ...<2 lines>...
+        wrapped_get_result,
+        ~~~~~~~~~~~~~~~~~~~
+    )(_source, info, **field_kwargs)
+    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1270, in wrapped_get_result
+    return _get_result(
+        _source,
+    ...<2 lines>...
+        field_kwargs=kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1156, in _get_result
+    return field.get_result(
+           ~~~~~~~~~~~~~~~~^
+        _source, info=info, args=field_args, kwargs=field_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/field.py", line 242, in get_result
+    return self.base_resolver(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/fields/resolver.py", line 280, in __call__
+    return self.wrapped_func(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 1655, in create_account
+    exigir_permiso(db, leer_actor(db, info), "accounts.write", int(input.company_id))
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/rbac.py", line 111, in exigir_permiso
+    raise GraphQLError(f"Acceso denegado: falta el permiso {codigo}.", extensions={"code": "FORBIDDEN"})
+graphql.error.graphql_error.GraphQLError: Acceso denegado: falta el permiso accounts.write.
+.La empresa ya tiene un administrador principal.
+
+GraphQL request:2:15
+1 | mutation($input: CreateCompanyAdminInput!) {
+2 |               createCompanyAdmin(input: $input) { id }
+  |               ^
+3 |             }
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/graphql/execution/executor.py", line 982, in execute_field
+    result = resolve_fn(source, info, **args)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1292, in _resolver
+    return _get_result_with_extensions(
+        _source,
+        strawberry_info,
+        **kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1278, in extension_resolver
+    return reduce(
+           ~~~~~~~
+    ...<2 lines>...
+        wrapped_get_result,
+        ~~~~~~~~~~~~~~~~~~~
+    )(_source, info, **field_kwargs)
+    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1270, in wrapped_get_result
+    return _get_result(
+        _source,
+    ...<2 lines>...
+        field_kwargs=kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1156, in _get_result
+    return field.get_result(
+           ~~~~~~~~~~~~~~~~^
+        _source, info=info, args=field_args, kwargs=field_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/field.py", line 242, in get_result
+    return self.base_resolver(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/fields/resolver.py", line 280, in __call__
+    return self.wrapped_func(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 1399, in create_company_admin
+    raise GraphQLError(
+    ...<2 lines>...
+    )
+graphql.error.graphql_error.GraphQLError: La empresa ya tiene un administrador principal.
+.Inicia sesión para consultar la información.
+
+GraphQL request:1:35
+1 | query($from: Date!, $to: Date!) { generalBalance(fromDate: $from, toDate: $to) {
+  |                                   ^
+  |  companyId currency fromDate toDate openingBalance totalIncome totalExpense prof
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/graphql/execution/executor.py", line 982, in execute_field
+    result = resolve_fn(source, info, **args)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1292, in _resolver
+    return _get_result_with_extensions(
+        _source,
+        strawberry_info,
+        **kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1278, in extension_resolver
+    return reduce(
+           ~~~~~~~
+    ...<2 lines>...
+        wrapped_get_result,
+        ~~~~~~~~~~~~~~~~~~~
+    )(_source, info, **field_kwargs)
+    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1270, in wrapped_get_result
+    return _get_result(
+        _source,
+    ...<2 lines>...
+        field_kwargs=kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1156, in _get_result
+    return field.get_result(
+           ~~~~~~~~~~~~~~~~^
+        _source, info=info, args=field_args, kwargs=field_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/field.py", line 242, in get_result
+    return self.base_resolver(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/fields/resolver.py", line 280, in __call__
+    return self.wrapped_func(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 781, in general_balance
+    return balance_for_company(db, leer_actor(db, info), from_date, to_date)
+                                   ~~~~~~~~~~^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 75, in leer_actor
+    raise GraphQLError("Inicia sesión para consultar la información.", extensions={"code": "UNAUTHENTICATED"})
+graphql.error.graphql_error.GraphQLError: Inicia sesión para consultar la información.
+Tu sesión venció o no es válida. Inicia sesión nuevamente.
+
+GraphQL request:1:35
+1 | query($from: Date!, $to: Date!) { generalBalance(fromDate: $from, toDate: $to) {
+  |                                   ^
+  |  companyId currency fromDate toDate openingBalance totalIncome totalExpense prof
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/jwt/api_jws.py", line 364, in _load
+    signing_input, crypto_segment = jwt.rsplit(b".", 1)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 77, in leer_actor
+    member_id, company_id = decode_access_token(authorization[7:].strip())
+                            ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/security.py", line 43, in decode_access_token
+    payload = jwt.decode(
+        token,
+    ...<2 lines>...
+        options={"require": ["companyUserId", "companyId", "exp"]},
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/jwt/api_jwt.py", line 370, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/jwt/api_jwt.py", line 267, in decode_complete
+    decoded = self._jws.decode_complete(
+        jwt,
+    ...<3 lines>...
+        detached_payload=detached_payload,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/jwt/api_jws.py", line 252, in decode_complete
+    payload, signing_input, header, signature = self._load(jwt)
+                                                ~~~~~~~~~~^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/jwt/api_jws.py", line 367, in _load
+    raise DecodeError("Not enough segments") from err
+jwt.exceptions.DecodeError: Not enough segments
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/graphql/execution/executor.py", line 982, in execute_field
+    result = resolve_fn(source, info, **args)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1292, in _resolver
+    return _get_result_with_extensions(
+        _source,
+        strawberry_info,
+        **kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1278, in extension_resolver
+    return reduce(
+           ~~~~~~~
+    ...<2 lines>...
+        wrapped_get_result,
+        ~~~~~~~~~~~~~~~~~~~
+    )(_source, info, **field_kwargs)
+    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1270, in wrapped_get_result
+    return _get_result(
+        _source,
+    ...<2 lines>...
+        field_kwargs=kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1156, in _get_result
+    return field.get_result(
+           ~~~~~~~~~~~~~~~~^
+        _source, info=info, args=field_args, kwargs=field_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/field.py", line 242, in get_result
+    return self.base_resolver(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/fields/resolver.py", line 280, in __call__
+    return self.wrapped_func(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 781, in general_balance
+    return balance_for_company(db, leer_actor(db, info), from_date, to_date)
+                                   ~~~~~~~~~~^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 79, in leer_actor
+    raise GraphQLError("Tu sesión venció o no es válida. Inicia sesión nuevamente.", extensions={"code": "UNAUTHENTICATED"}) from exc
+graphql.error.graphql_error.GraphQLError: Tu sesión venció o no es válida. Inicia sesión nuevamente.
+Tu sesión venció o no es válida. Inicia sesión nuevamente.
+
+GraphQL request:1:35
+1 | query($from: Date!, $to: Date!) { generalBalance(fromDate: $from, toDate: $to) {
+  |                                   ^
+  |  companyId currency fromDate toDate openingBalance totalIncome totalExpense prof
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 77, in leer_actor
+    member_id, company_id = decode_access_token(authorization[7:].strip())
+                            ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/security.py", line 43, in decode_access_token
+    payload = jwt.decode(
+        token,
+    ...<2 lines>...
+        options={"require": ["companyUserId", "companyId", "exp"]},
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/jwt/api_jwt.py", line 370, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/jwt/api_jwt.py", line 277, in decode_complete
+    self._validate_claims(
+    ~~~~~~~~~~~~~~~~~~~~~^
+        payload,
+        ^^^^^^^^
+    ...<4 lines>...
+        subject=subject,
+        ^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/jwt/api_jwt.py", line 410, in _validate_claims
+    self._validate_exp(payload, now, leeway)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/jwt/api_jwt.py", line 513, in _validate_exp
+    raise ExpiredSignatureError("Signature has expired")
+jwt.exceptions.ExpiredSignatureError: Signature has expired
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/graphql/execution/executor.py", line 982, in execute_field
+    result = resolve_fn(source, info, **args)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1292, in _resolver
+    return _get_result_with_extensions(
+        _source,
+        strawberry_info,
+        **kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1278, in extension_resolver
+    return reduce(
+           ~~~~~~~
+    ...<2 lines>...
+        wrapped_get_result,
+        ~~~~~~~~~~~~~~~~~~~
+    )(_source, info, **field_kwargs)
+    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1270, in wrapped_get_result
+    return _get_result(
+        _source,
+    ...<2 lines>...
+        field_kwargs=kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1156, in _get_result
+    return field.get_result(
+           ~~~~~~~~~~~~~~~~^
+        _source, info=info, args=field_args, kwargs=field_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/field.py", line 242, in get_result
+    return self.base_resolver(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/fields/resolver.py", line 280, in __call__
+    return self.wrapped_func(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 781, in general_balance
+    return balance_for_company(db, leer_actor(db, info), from_date, to_date)
+                                   ~~~~~~~~~~^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 79, in leer_actor
+    raise GraphQLError("Tu sesión venció o no es válida. Inicia sesión nuevamente.", extensions={"code": "UNAUTHENTICATED"}) from exc
+graphql.error.graphql_error.GraphQLError: Tu sesión venció o no es válida. Inicia sesión nuevamente.
+Tu sesión venció o no es válida. Inicia sesión nuevamente.
+
+GraphQL request:1:35
+1 | query($from: Date!, $to: Date!) { generalBalance(fromDate: $from, toDate: $to) {
+  |                                   ^
+  |  companyId currency fromDate toDate openingBalance totalIncome totalExpense prof
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 77, in leer_actor
+    member_id, company_id = decode_access_token(authorization[7:].strip())
+                            ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/security.py", line 43, in decode_access_token
+    payload = jwt.decode(
+        token,
+    ...<2 lines>...
+        options={"require": ["companyUserId", "companyId", "exp"]},
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/jwt/api_jwt.py", line 370, in decode
+    decoded = self.decode_complete(
+        jwt,
+    ...<8 lines>...
+        leeway=leeway,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/jwt/api_jwt.py", line 267, in decode_complete
+    decoded = self._jws.decode_complete(
+        jwt,
+    ...<3 lines>...
+        detached_payload=detached_payload,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/jwt/api_jws.py", line 278, in decode_complete
+    self._verify_signature(
+    ~~~~~~~~~~~~~~~~~~~~~~^
+        signing_input,
+        ^^^^^^^^^^^^^^
+    ...<4 lines>...
+        options=merged_options,
+        ^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/jwt/api_jws.py", line 446, in _verify_signature
+    raise InvalidSignatureError("Signature verification failed")
+jwt.exceptions.InvalidSignatureError: Signature verification failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/graphql/execution/executor.py", line 982, in execute_field
+    result = resolve_fn(source, info, **args)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1292, in _resolver
+    return _get_result_with_extensions(
+        _source,
+        strawberry_info,
+        **kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1278, in extension_resolver
+    return reduce(
+           ~~~~~~~
+    ...<2 lines>...
+        wrapped_get_result,
+        ~~~~~~~~~~~~~~~~~~~
+    )(_source, info, **field_kwargs)
+    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1270, in wrapped_get_result
+    return _get_result(
+        _source,
+    ...<2 lines>...
+        field_kwargs=kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1156, in _get_result
+    return field.get_result(
+           ~~~~~~~~~~~~~~~~^
+        _source, info=info, args=field_args, kwargs=field_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/field.py", line 242, in get_result
+    return self.base_resolver(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/fields/resolver.py", line 280, in __call__
+    return self.wrapped_func(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 781, in general_balance
+    return balance_for_company(db, leer_actor(db, info), from_date, to_date)
+                                   ~~~~~~~~~~^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 79, in leer_actor
+    raise GraphQLError("Tu sesión venció o no es válida. Inicia sesión nuevamente.", extensions={"code": "UNAUTHENTICATED"}) from exc
+graphql.error.graphql_error.GraphQLError: Tu sesión venció o no es válida. Inicia sesión nuevamente.
+Tu sesión ya no está activa.
+
+GraphQL request:1:35
+1 | query($from: Date!, $to: Date!) { generalBalance(fromDate: $from, toDate: $to) {
+  |                                   ^
+  |  companyId currency fromDate toDate openingBalance totalIncome totalExpense prof
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/graphql/execution/executor.py", line 982, in execute_field
+    result = resolve_fn(source, info, **args)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1292, in _resolver
+    return _get_result_with_extensions(
+        _source,
+        strawberry_info,
+        **kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1278, in extension_resolver
+    return reduce(
+           ~~~~~~~
+    ...<2 lines>...
+        wrapped_get_result,
+        ~~~~~~~~~~~~~~~~~~~
+    )(_source, info, **field_kwargs)
+    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1270, in wrapped_get_result
+    return _get_result(
+        _source,
+    ...<2 lines>...
+        field_kwargs=kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1156, in _get_result
+    return field.get_result(
+           ~~~~~~~~~~~~~~~~^
+        _source, info=info, args=field_args, kwargs=field_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/field.py", line 242, in get_result
+    return self.base_resolver(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/fields/resolver.py", line 280, in __call__
+    return self.wrapped_func(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 781, in general_balance
+    return balance_for_company(db, leer_actor(db, info), from_date, to_date)
+                                   ~~~~~~~~~~^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 82, in leer_actor
+    raise GraphQLError("Tu sesión ya no está activa.", extensions={"code": "UNAUTHENTICATED"})
+graphql.error.graphql_error.GraphQLError: Tu sesión ya no está activa.
+.Acceso denegado: falta el permiso accounts.read.
+
+GraphQL request:1:35
+1 | query($from: Date!, $to: Date!) { generalBalance(fromDate: $from, toDate: $to) {
+  |                                   ^
+  |  companyId currency fromDate toDate openingBalance totalIncome totalExpense prof
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/graphql/execution/executor.py", line 982, in execute_field
+    result = resolve_fn(source, info, **args)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1292, in _resolver
+    return _get_result_with_extensions(
+        _source,
+        strawberry_info,
+        **kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1278, in extension_resolver
+    return reduce(
+           ~~~~~~~
+    ...<2 lines>...
+        wrapped_get_result,
+        ~~~~~~~~~~~~~~~~~~~
+    )(_source, info, **field_kwargs)
+    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1270, in wrapped_get_result
+    return _get_result(
+        _source,
+    ...<2 lines>...
+        field_kwargs=kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1156, in _get_result
+    return field.get_result(
+           ~~~~~~~~~~~~~~~~^
+        _source, info=info, args=field_args, kwargs=field_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/field.py", line 242, in get_result
+    return self.base_resolver(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/fields/resolver.py", line 280, in __call__
+    return self.wrapped_func(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 781, in general_balance
+    return balance_for_company(db, leer_actor(db, info), from_date, to_date)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/balances.py", line 48, in balance_for_company
+    member = exigir_permiso(db, actor, 'accounts.read')
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/rbac.py", line 111, in exigir_permiso
+    raise GraphQLError(f"Acceso denegado: falta el permiso {codigo}.", extensions={"code": "FORBIDDEN"})
+graphql.error.graphql_error.GraphQLError: Acceso denegado: falta el permiso accounts.read.
+Acceso denegado: falta el permiso transactions.read.
+
+GraphQL request:1:35
+1 | query($from: Date!, $to: Date!) { generalBalance(fromDate: $from, toDate: $to) {
+  |                                   ^
+  |  companyId currency fromDate toDate openingBalance totalIncome totalExpense prof
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/graphql/execution/executor.py", line 982, in execute_field
+    result = resolve_fn(source, info, **args)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1292, in _resolver
+    return _get_result_with_extensions(
+        _source,
+        strawberry_info,
+        **kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1278, in extension_resolver
+    return reduce(
+           ~~~~~~~
+    ...<2 lines>...
+        wrapped_get_result,
+        ~~~~~~~~~~~~~~~~~~~
+    )(_source, info, **field_kwargs)
+    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1270, in wrapped_get_result
+    return _get_result(
+        _source,
+    ...<2 lines>...
+        field_kwargs=kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1156, in _get_result
+    return field.get_result(
+           ~~~~~~~~~~~~~~~~^
+        _source, info=info, args=field_args, kwargs=field_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/field.py", line 242, in get_result
+    return self.base_resolver(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/fields/resolver.py", line 280, in __call__
+    return self.wrapped_func(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 781, in general_balance
+    return balance_for_company(db, leer_actor(db, info), from_date, to_date)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/balances.py", line 49, in balance_for_company
+    exigir_permiso(db, actor, 'transactions.read', member.company_id)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/rbac.py", line 111, in exigir_permiso
+    raise GraphQLError(f"Acceso denegado: falta el permiso {codigo}.", extensions={"code": "FORBIDDEN"})
+graphql.error.graphql_error.GraphQLError: Acceso denegado: falta el permiso transactions.read.
+...La cuenta no existe en tu empresa.
+
+GraphQL request:1:35
+1 | query($from: Date!, $to: Date!) { accountBalance(accountId: "1", fromDate: $from, toDate: $to) { closingBalance } }
+  |                                   ^
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/graphql/execution/executor.py", line 982, in execute_field
+    result = resolve_fn(source, info, **args)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1292, in _resolver
+    return _get_result_with_extensions(
+        _source,
+        strawberry_info,
+        **kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1278, in extension_resolver
+    return reduce(
+           ~~~~~~~
+    ...<2 lines>...
+        wrapped_get_result,
+        ~~~~~~~~~~~~~~~~~~~
+    )(_source, info, **field_kwargs)
+    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1270, in wrapped_get_result
+    return _get_result(
+        _source,
+    ...<2 lines>...
+        field_kwargs=kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1156, in _get_result
+    return field.get_result(
+           ~~~~~~~~~~~~~~~~^
+        _source, info=info, args=field_args, kwargs=field_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/field.py", line 242, in get_result
+    return self.base_resolver(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/fields/resolver.py", line 280, in __call__
+    return self.wrapped_func(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 789, in account_balance
+    return balance_for_company(db, actor, from_date, to_date, account).accounts[0]
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/balances.py", line 79, in balance_for_company
+    raise GraphQLError('La cuenta no existe en tu empresa.', extensions={'code': 'NOT_FOUND'})
+graphql.error.graphql_error.GraphQLError: La cuenta no existe en tu empresa.
+Unknown argument 'companyId' on field 'Query.generalBalance'.
+
+GraphQL request:1:50
+1 | query($from: Date!, $to: Date!) { generalBalance(companyId: "1", fromDate: $from
+  |                                                  ^
+  | , toDate: $to) { companyId currency fromDate toDate openingBalance totalIncome t
+Unknown argument 'actorCompanyUserId' on field 'Query.generalBalance'.
+
+GraphQL request:1:50
+1 | query($from: Date!, $to: Date!) { generalBalance(actorCompanyUserId: "1", fromDa
+  |                                                  ^
+  | te: $from, toDate: $to) { companyId currency fromDate toDate openingBalance tota
+...La fecha inicial no puede ser posterior a la fecha final.
+
+GraphQL request:1:35
+1 | query($from: Date!, $to: Date!) { generalBalance(fromDate: $from, toDate: $to) {
+  |                                   ^
+  |  companyId currency fromDate toDate openingBalance totalIncome totalExpense prof
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/graphql/execution/executor.py", line 982, in execute_field
+    result = resolve_fn(source, info, **args)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1292, in _resolver
+    return _get_result_with_extensions(
+        _source,
+        strawberry_info,
+        **kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1278, in extension_resolver
+    return reduce(
+           ~~~~~~~
+    ...<2 lines>...
+        wrapped_get_result,
+        ~~~~~~~~~~~~~~~~~~~
+    )(_source, info, **field_kwargs)
+    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1270, in wrapped_get_result
+    return _get_result(
+        _source,
+    ...<2 lines>...
+        field_kwargs=kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1156, in _get_result
+    return field.get_result(
+           ~~~~~~~~~~~~~~~~^
+        _source, info=info, args=field_args, kwargs=field_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/field.py", line 242, in get_result
+    return self.base_resolver(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/fields/resolver.py", line 280, in __call__
+    return self.wrapped_func(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 781, in general_balance
+    return balance_for_company(db, leer_actor(db, info), from_date, to_date)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/balances.py", line 51, in balance_for_company
+    raise GraphQLError('La fecha inicial no puede ser posterior a la fecha final.',
+                       extensions={'code': 'BAD_USER_INPUT'})
+graphql.error.graphql_error.GraphQLError: La fecha inicial no puede ser posterior a la fecha final.
+Variable '$from' has invalid value: Value cannot represent a Date: "2026-02-30". day 30 must be in range 1..28 for month 2 in year 2026
+
+GraphQL request:1:7
+1 | query($from: Date!, $to: Date!) { generalBalance(fromDate: $from, toDate: $to) {
+  |       ^
+  |  companyId currency fromDate toDate openingBalance totalIncome totalExpense prof
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/graphql/utilities/validate_input_value.py", line 237, in validate_input_value_impl
+    result = scalar_type.coerce_input_value(input_value)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/types/base_scalars.py", line 40, in inner
+    raise StrawberryInputCoercionError(
+        f'Value cannot represent a {type_}: "{value}".{detail}'
+    ) from None
+strawberry.exceptions.StrawberryInputCoercionError: Value cannot represent a Date: "2026-02-30". day 30 must be in range 1..28 for month 2 in year 2026
+La fecha final debe ser anterior al 31/12/9999.
+
+GraphQL request:1:35
+1 | query($from: Date!, $to: Date!) { generalBalance(fromDate: $from, toDate: $to) {
+  |                                   ^
+  |  companyId currency fromDate toDate openingBalance totalIncome totalExpense prof
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/graphql/execution/executor.py", line 982, in execute_field
+    result = resolve_fn(source, info, **args)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1292, in _resolver
+    return _get_result_with_extensions(
+        _source,
+        strawberry_info,
+        **kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1278, in extension_resolver
+    return reduce(
+           ~~~~~~~
+    ...<2 lines>...
+        wrapped_get_result,
+        ~~~~~~~~~~~~~~~~~~~
+    )(_source, info, **field_kwargs)
+    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1270, in wrapped_get_result
+    return _get_result(
+        _source,
+    ...<2 lines>...
+        field_kwargs=kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1156, in _get_result
+    return field.get_result(
+           ~~~~~~~~~~~~~~~~^
+        _source, info=info, args=field_args, kwargs=field_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/field.py", line 242, in get_result
+    return self.base_resolver(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/fields/resolver.py", line 280, in __call__
+    return self.wrapped_func(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 781, in general_balance
+    return balance_for_company(db, leer_actor(db, info), from_date, to_date)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/balances.py", line 54, in balance_for_company
+    raise GraphQLError('La fecha final debe ser anterior al 31/12/9999.',
+                       extensions={'code': 'BAD_USER_INPUT'})
+graphql.error.graphql_error.GraphQLError: La fecha final debe ser anterior al 31/12/9999.
+..s.....El monto del movimiento debe ser mayor que cero.
+
+GraphQL request:3:3
+2 | mutation($input: CreateTransactionInput!) {
+3 |   createTransaction(input: $input) {
+  |   ^
+4 |     id
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/graphql/execution/executor.py", line 982, in execute_field
+    result = resolve_fn(source, info, **args)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1292, in _resolver
+    return _get_result_with_extensions(
+        _source,
+        strawberry_info,
+        **kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1278, in extension_resolver
+    return reduce(
+           ~~~~~~~
+    ...<2 lines>...
+        wrapped_get_result,
+        ~~~~~~~~~~~~~~~~~~~
+    )(_source, info, **field_kwargs)
+    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1270, in wrapped_get_result
+    return _get_result(
+        _source,
+    ...<2 lines>...
+        field_kwargs=kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1156, in _get_result
+    return field.get_result(
+           ~~~~~~~~~~~~~~~~^
+        _source, info=info, args=field_args, kwargs=field_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/field.py", line 242, in get_result
+    return self.base_resolver(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/fields/resolver.py", line 280, in __call__
+    return self.wrapped_func(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 1816, in create_transaction
+    raise GraphQLError("El monto del movimiento debe ser mayor que cero.")
+graphql.error.graphql_error.GraphQLError: El monto del movimiento debe ser mayor que cero.
+.La llave de idempotencia ya fue utilizada con otros datos.
+
+GraphQL request:3:3
+2 | mutation($input: CreateTransactionInput!) {
+3 |   createTransaction(input: $input) {
+  |   ^
+4 |     id
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/graphql/execution/executor.py", line 982, in execute_field
+    result = resolve_fn(source, info, **args)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1292, in _resolver
+    return _get_result_with_extensions(
+        _source,
+        strawberry_info,
+        **kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1278, in extension_resolver
+    return reduce(
+           ~~~~~~~
+    ...<2 lines>...
+        wrapped_get_result,
+        ~~~~~~~~~~~~~~~~~~~
+    )(_source, info, **field_kwargs)
+    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1270, in wrapped_get_result
+    return _get_result(
+        _source,
+    ...<2 lines>...
+        field_kwargs=kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1156, in _get_result
+    return field.get_result(
+           ~~~~~~~~~~~~~~~~^
+        _source, info=info, args=field_args, kwargs=field_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/field.py", line 242, in get_result
+    return self.base_resolver(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/fields/resolver.py", line 280, in __call__
+    return self.wrapped_func(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 1863, in create_transaction
+    return load_idempotent_transaction(
+        db, account.company_id, idempotency_key, request_hash
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 403, in load_idempotent_transaction
+    raise GraphQLError(
+        "La llave de idempotencia ya fue utilizada con otros datos."
+    )
+graphql.error.graphql_error.GraphQLError: La llave de idempotencia ya fue utilizada con otros datos.
+.Fallo controlado después de flush
+
+GraphQL request:2:11
+1 | mutation A($input: SetRolePermissionsInput!) {
+2 |           setRolePermissions(input: $input) { changed }
+  |           ^
+3 |         }
+Traceback (most recent call last):
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/graphql/execution/executor.py", line 982, in execute_field
+    result = resolve_fn(source, info, **args)
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1292, in _resolver
+    return _get_result_with_extensions(
+        _source,
+        strawberry_info,
+        **kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1278, in extension_resolver
+    return reduce(
+           ~~~~~~~
+    ...<2 lines>...
+        wrapped_get_result,
+        ~~~~~~~~~~~~~~~~~~~
+    )(_source, info, **field_kwargs)
+    ~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1270, in wrapped_get_result
+    return _get_result(
+        _source,
+    ...<2 lines>...
+        field_kwargs=kwargs,
+    )
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/schema/schema_converter.py", line 1156, in _get_result
+    return field.get_result(
+           ~~~~~~~~~~~~~~~~^
+        _source, info=info, args=field_args, kwargs=field_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/field.py", line 242, in get_result
+    return self.base_resolver(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/.venv/lib/python3.14/site-packages/strawberry/types/fields/resolver.py", line 280, in __call__
+    return self.wrapped_func(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/app/schema.py", line 1059, in set_role_permissions
+    db.flush()
+    ~~~~~~~~^^
+  File "/home/avenkal/Descargas/Tecnologico_De_Software/Cuatri-4/Back/U3/unidad3_actividad1_equipo/ingresos/tests/test_role_permissions.py", line 107, in fail_after_flush
+    raise RuntimeError("Fallo controlado después de flush")
+RuntimeError: Fallo controlado después de flush
+..
+----------------------------------------------------------------------
+Ran 28 tests in 9.821s
+
+OK (skipped=1)

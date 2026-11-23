@@ -1,0 +1,172 @@
+# Ejecutar una operación por vez en GraphiQL.
+# Login: variables {"input":{"email":"consulta@dashboard.example.com","password":"VALOR_DE_DEMO_PASSWORD_LOCAL"}}
+mutation IniciarSesion($input: LoginInput!) {
+  login(input: $input) {
+    token
+    tokenType
+    user { name }
+  }
+}
+
+# Después del login, añadir en Headers: Authorization: Bearer TOKEN_RECIBIDO.
+# No guardar el token en archivos ni capturas.
+# Variables: {"from":"2026-10-26","to":"2026-10-30"}
+query IndicadoresEmpresa($from: Date!, $to: Date!) {
+  generalBalance(fromDate: $from, toDate: $to) {
+    companyId
+    companyName
+    currency
+    fromDate
+    toDate
+    openingBalance
+    totalIncome
+    totalExpense
+    profit
+    closingBalance
+    isInRed
+    accountsInRed
+    transactionCount
+    accounts {
+      accountId
+      accountName
+      isActive
+      openingBalance
+      totalIncome
+      totalExpense
+      profit
+      closingBalance
+      isInRed
+      transactionCount
+    }
+  }
+}
+
+# Usar el accountId devuelto por la consulta anterior; no adivinar identificadores.
+query BalanceDeCuenta($accountId: ID!, $from: Date!, $to: Date!) {
+  accountBalance(accountId: $accountId, fromDate: $from, toDate: $to) {
+    accountId
+    accountName
+    isActive
+    openingBalance
+    totalIncome
+    totalExpense
+    profit
+    closingBalance
+    isInRed
+    transactionCount
+  }
+}
+
+# Sesión autenticada: empresa, rol y permisos efectivos.
+query SesionActual {
+  me {
+    companyUserId
+    companyId
+    companyName
+    isAdmin
+    user { id name email }
+    role { code name }
+    permissions
+  }
+}
+
+query UsuariosEmpresa {
+  companyUsers {
+    id
+    isAdmin
+    isActive
+    user { name email }
+    role { code name }
+  }
+}
+
+query CuentasEmpresa {
+  accounts {
+    id
+    name
+    accountType
+    bankName
+    cardLastDigits
+    clabe
+    isActive
+  }
+}
+
+query ConceptosEmpresa {
+  concepts {
+    id
+    name
+    conceptType
+    isActive
+  }
+}
+
+# Variables: {"accountId":"ID_CUENTA"}
+query ConceptosDeCuenta($accountId: ID!) {
+  accountConcepts(accountId: $accountId) {
+    id
+    isActive
+    concept { id name conceptType }
+  }
+}
+
+# Variables: {"input":{"companyId":"1","name":"Usuario","email":"nuevo@empresa.com","password":"secreto123"}}
+mutation NuevoUsuario($input: CreateCompanyUserInput!) {
+  createCompanyUser(input: $input) {
+    id
+    isActive
+    isAdmin
+    user { name email }
+    role { code name }
+  }
+}
+
+mutation DesactivarUsuario($id: ID!) {
+  deactivateCompanyUser(id: $id) {
+    id
+    isActive
+  }
+}
+
+mutation NuevaCuenta($input: CreateAccountInput!) {
+  createAccount(input: $input) {
+    id
+    name
+    accountType
+    bankName
+    isActive
+  }
+}
+
+mutation NuevoConcepto($input: CreateConceptInput!) {
+  createConcept(input: $input) {
+    id
+    name
+    conceptType
+    isActive
+  }
+}
+
+mutation AsignarConcepto($input: AssignConceptToAccountInput!) {
+  assignConceptToAccount(input: $input) {
+    id
+    isActive
+    concept { id name }
+  }
+}
+
+mutation QuitarConcepto($accountId: ID!, $conceptId: ID!) {
+  removeConceptFromAccount(accountId: $accountId, conceptId: $conceptId)
+}
+
+# Variables: generar un UUID nuevo por intento legítimo.
+# {"input":{"accountId":"1","conceptId":"2","transactionType":"EXPENSE","amount":"100.00","idempotencyKey":"11111111-1111-1111-1111-111111111111","shortDescription":"Prueba"}}
+mutation CrearMovimiento($input: CreateTransactionInput!) {
+  createTransaction(input: $input) {
+    id
+    amount
+    transactionType
+    account { id name }
+    concept { id name }
+  }
+}
